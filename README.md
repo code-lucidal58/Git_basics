@@ -19,3 +19,4 @@ To unstage a file:  git rm --cache <filename>
 To see the changes made to a staged file: git diff <filename>
 
 Commit is the last part of Git workflow. This permanently saves changes in the staging area to repository. 
+
