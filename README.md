@@ -5,7 +5,7 @@ A git project has three main parts:</br>
 1) working directory: this is the place where the user make changes to the file in the project.
 2) Staging area: this is the place where all the changes the project are listed.
 3) Repository: all latest files/folders are saved as a different version in the project.
-</br></br>
+</br>
 In git workflow, changes are made in the working directory, files are added to the staging area and saved in the repository.
 </br>
 Status of changed files: <i>git status</i></br>
@@ -22,7 +22,9 @@ Git stores commits in a chronologically order in repository. This is helpful whe
 
 <b>Backtracking</b></br></br>
 The commit you are currently on is called HEAD commit. To look for changes in it, use <i>git show HEAD</i>. The output is same as <i>git log</i> plus changes made to file.</br>
-To revert back to the content before the latest commit: <i>git checkout HEAD filename</i>.</br>
+To revert back to the content before the latest commit: <i>git checkout HEAD filename</i>.There is a shortcut to theis command: <b><i>git checkout -- filename</i></b></br>
 To remove a file from staging area: <b><i>git reset filename</i></b>.</br>
 Git log return sha for each commit. The first 7 characters of the sha of last commit can also be used to unstag changes. 
-<b><i>git reset 96g12673</i></b></br>
+<b><i>git reset 96g12673</i></b></br></br>
+
+<b>Git Branching</b></br></br>
