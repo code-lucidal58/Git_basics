@@ -1,4 +1,4 @@
-##GIT BASICS
+## GIT BASICS
 It is tough to work without Git in this world of uncertainities. You never know when you desktop goes down and BOOM you lost all your projects. It is recommended for every developer to be committed to git ;)
 >Git is a software that allows you to keep track of changes made to a project over time. Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed.
 
@@ -7,8 +7,8 @@ To make a (existing) repository into git project:
 git init
 ```
 A git project has three main parts:
-1.  Working directory: this is the place where the user make changes to the file in the project.
-2.  Staging area: this is the place where all the changes the project are listed.
+1. Working directory: this is the place where the user make changes to the file in the project.
+2. Staging area: this is the place where all the changes the project are listed.
 3. Repository: all latest files/folders are saved as a different version in the project.
 
 >In git workflow, changes are made in the working directory, files are added to the staging area and saved in the repository.
@@ -54,7 +54,7 @@ Git stores commits in a chronologically order in repository. This is helpful whe
 git log
 ```
 
-###Backtracking
+### Backtracking
 The commit you are currently on is called __HEAD__ commit. To look for changes in it:
 ```git
 git show HEAD
@@ -77,5 +77,5 @@ Git log return sha for each commit. The first 7 characters of the sha of last co
 git reset 96g12673
 ```
 
-###Git Branching
+### Git Branching
 The default branch that we work is _master_. 
