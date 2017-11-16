@@ -78,4 +78,35 @@ git reset 96g12673
 ```
 
 ### Git Branching
-The default branch that we work is _master_. 
+The default branch that we work is _master_. Git provides option to create branches to experiment with versions of the project. The main project will be _MASTER_ branch. The other branches need to merged to MASTER to update the main repository. New branch is a different version of the Git project. It will have all commits from MASTER. To check the current branch:
+```git
+git branch
+```
+The output will be the list of all branches with asterisk(*) mark on the current branch. To create a new branch:
+```git
+git branch new_branch
+```
+To switch to another branch:
+```git
+git checkout branch_name
+```
+After switching, staging and commiting is done in the same way as before. To merge the changes with MASTER branch, first switch to master branch using _git checkout master_, then:
+```git
+git merge branch_name
+```
+There will be merge conflicts if the same file is editted in master as well as any other. 
+Many branches can be created in a Git project. But, the end requirements reflecting all changes into the _master_ branch. After merging the branches can be deleted:
+```git
+git branch -d branch_name
+```
+
+### Working with collaborates
+
+>A __remote__ is a shared Git repository that allows multiple collaborators to work on the same Git project from different locations. Collaborators work on the project independently, and merge changes together when they are ready to do so. 
+
+To contribute to a remote project, the project first needs to be cloned to local. This is done as:
+```git
+git clone remote_location clone_name
+```
+_repo_location_ is address of the place where the repository is. It can be a file path or URL. _clone_name_ is the name of the directory where Git project is cloned.
+To clone a repository
