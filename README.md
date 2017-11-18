@@ -99,6 +99,10 @@ Many branches can be created in a Git project. But, the end requirements reflect
 ```git
 git branch -d branch_name
 ```
+If a branch is not merged to _master_, then to delete that branch, run:
+```git
+git branch -D branch_name
+```
 
 ### Working with collaborates
 
@@ -108,5 +112,19 @@ To contribute to a remote project, the project first needs to be cloned to local
 ```git
 git clone remote_location clone_name
 ```
-_repo_location_ is address of the place where the repository is. It can be a file path or URL. _clone_name_ is the name of the directory where Git project is cloned.
-To clone a repository
+_repo_location_ is address of the place where the repository is. It can be a file path or URL. _clone_name_ is the name of the directory where Git project is cloned. By default, git names the remote connection as __origin__. All remotes can be views using:
+```git 
+git remote -v
+```
+To reflect changes in git to you system:
+```git
+git fetch
+```
+This will not update the local repository but will bring the changes to remote branch.
+To intergrate origin (master) into local repository, __git mergin origin/master__ is used.
+
+To push changes to the origin:
+```git
+git push origin branch_name
+```
+After pushing the changes to a branch, they can then be merged with master.
