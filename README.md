@@ -1,46 +1,57 @@
 ## GIT BASICS
-It is tough to work without Git in this world of uncertainities. You never know when you desktop goes down and BOOM you lost all your projects. It is recommended for every developer to be committed to git ;)
->Git is a software that allows you to keep track of changes made to a project over time. Git works by recording the changes you make to a project, storing those changes, then allowing you to reference them as needed.
+It is tough to work without Git in this world of uncertainties. You never know when you
+desktop goes down and BOOM you lost all your projects. It is recommended for every
+developer to be committed to git ;)
+>Git is a software that allows you to keep track of changes made to a project over time.
+Git works by recording the changes you make to a project, storing those changes, then
+allowing you to reference them as needed.
 
-To make a (existing) repository into git project: 
-```git
-git init
-```
+### Few key concepts
+Git is a distributed and decentralised source control system. Most operations
+are local. Internet is required when changes are to be pushed to a remote repository.
+Each **commit** is identified with SHA1 hash. **HEAD** is pointer to last commit
+in current branch. **Remote** is a related repository that is not local.
+
+### Going to some depth
 A git project has three main parts:
-1. Working directory: this is the place where the user make changes to the file in the project.
-2. Staging area: this is the place where all the changes the project are listed.
-3. Repository: all latest files/folders are saved as a different version in the project.
+1. **Working directory**: This is the place where the user make changes to the
+file in the project. A folder is converted to a git repository using ```git init```.
+To clone(bring to local system) a git repository ```git clone <repo_url>``` is executed.
+2. **Staging area**: This is the place where all the changes the project are
+listed. Local changes are moved to staging area using ```git add <file/folder names>```.
+3. **Repository**: all latest files/folders are saved as a different version in the
+project.This is done using ```git commit -m<message for the commit>```. Adding message
+to the commit is mandatory.
 
->In git workflow, changes are made in the working directory, files are added to the staging area and saved in the repository.
+Local changes to Remote repository: ```git push```  
+Remote repository changes to Local: ```git pull```
 
-Status of changed files: 
-```git
+>In git workflow, changes are made in the working directory, files are added to
+the staging area and saved in the repository.
+
+### Important git commands
+**Status of changed files**  
+```shell
 git status
 ```
-Untracked files mean the files has some changes but git has not started tracking them.
-To add a file to staging area: 
-```git
-git add filename
+Untracked files mean the files has some changes but git has not started tracking them.  
+**Add a file to staging area**  
+```shell
+git add filename #OR
+git add * #OR
+git add . #OR
+git add filename_1 filename_2 #OR
+git add -A
 ```
-or 
-```git
-git add *
-``` 
-or
-```git
-git add .
-``` 
-or 
-```git
-git add filename_1 filename_2
-```
+Here, each command has their own importance and may behave different in
+different situations.
 
-To unstage a file:  
+**Unstage a file**  
 ```git
 git rm --cache filename
 ```
 
-To see the changes made to a staged file: 
+**See the changes made to a staged file**  
 ```git
 git diff filename
 ```
@@ -68,11 +79,11 @@ There is a shortcut to this command:
 ```git
 git checkout -- filename
 ```
-To remove a file from staging area: 
+To remove a file from staging area:
 ```git
 git reset filename
 ```
-Git log return sha for each commit. The first 7 characters of the sha of last commit can also be used to unstag changes. 
+Git log return SHA for each commit. The first 7 characters of the sha of last commit can also be used to unstag changes.
 ```git
 git reset 96g12673
 ```
@@ -82,7 +93,7 @@ The default branch that we work is _master_. Git provides option to create branc
 ```git
 git branch
 ```
-The output will be the list of all branches with asterisk(*) mark on the current branch. To create a new branch:
+The output will be the list of all branches with asterisk(\*) mark on the current branch. To create a new branch:
 ```git
 git branch new_branch
 ```
@@ -94,7 +105,7 @@ After switching, staging and commiting is done in the same way as before. To mer
 ```git
 git merge branch_name
 ```
-There will be merge conflicts if the same file is editted in master as well as any other. 
+There will be merge conflicts if the same file is editted in master as well as any other.
 Many branches can be created in a Git project. But, the end requirements reflecting all changes into the _master_ branch. After merging the branches can be deleted:
 ```git
 git branch -d branch_name
@@ -106,14 +117,14 @@ git branch -D branch_name
 
 ### Working with collaborates
 
->A __remote__ is a shared Git repository that allows multiple collaborators to work on the same Git project from different locations. Collaborators work on the project independently, and merge changes together when they are ready to do so. 
+>A __remote__ is a shared Git repository that allows multiple collaborators to work on the same Git project from different locations. Collaborators work on the project independently, and merge changes together when they are ready to do so.
 
 To contribute to a remote project, the project first needs to be cloned to local. This is done as:
 ```git
 git clone remote_location clone_name
 ```
 _repo_location_ is address of the place where the repository is. It can be a file path or URL. _clone_name_ is the name of the directory where Git project is cloned. By default, git names the remote connection as __origin__. All remotes can be views using:
-```git 
+```git
 git remote -v
 ```
 To reflect changes in git to you system:
