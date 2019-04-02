@@ -19,10 +19,15 @@ file in the project. A folder is converted to a git repository using ```git init
 To clone(bring to local system) a git repository ```git clone <repo_url>``` is executed.
 2. **Staging area**: This is the place where all the changes the project are
 listed. Local changes are moved to staging area using ```git add <file/folder names>```.
-3. **Repository**: all latest files/folders are saved as a different version in the
+3. **Git Repository**: all latest files/folders are saved as a different version in the
 project.This is done using ```git commit -m<message for the commit>```. Adding message
 to the commit is mandatory.
 
+***NOTE***: As shortcut to add and commit all changes in tracked files in working
+directory is
+```shell
+git commit -am \"<message>\"
+```
 Local changes to Remote repository: ```git push```  
 Remote repository changes to Local: ```git pull```
 
@@ -30,6 +35,28 @@ Remote repository changes to Local: ```git pull```
 the staging area and saved in the repository.
 
 ### Important git commands
+**Get Help**
+```shell
+git help
+```
+This shows the different options available in git. ```git help <command>``` will show the
+documentation of the specified command only.  
+
+**Configuring Git**
+Git must have the owner's name and email ID. This is preferably the user name and
+email ID that is linked to online VCS like Github or BitBucket.
+```shell
+git config --global user.name \"<username>\"
+git config --global user.email \"<email address>\"
+```
+These details can be viewed using ```git config --global --list```. The configuration
+settings are saved in the working directory in a file name **.gitconfig**.
+
+**Creating a folder along with git initialisation**
+```shell
+git init <project-folder-name>
+```
+A **.git** is created whenever git is initialised.  
 **Status of changed files**  
 ```shell
 git status
