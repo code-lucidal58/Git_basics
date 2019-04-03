@@ -35,14 +35,14 @@ Remote repository changes to Local: ```git pull```
 the staging area and saved in the repository.
 
 ### Important git commands
-**Get Help**
+**Get Help**  
 ```shell
 git help
 ```
 This shows the different options available in git. ```git help <command>``` will show the
 documentation of the specified command only.  
 
-**Configuring Git**
+**Configuring Git**  
 Git must have the owner's name and email ID. This is preferably the user name and
 email ID that is linked to online VCS like Github or BitBucket.
 ```shell
@@ -52,16 +52,18 @@ git config --global user.email \"<email address>\"
 These details can be viewed using ```git config --global --list```. The configuration
 settings are saved in the working directory in a file name **.gitconfig**.
 
-**Creating a folder along with git initialisation**
+**Creating a folder along with git initialisation**  
 ```shell
 git init <project-folder-name>
 ```
-A **.git** is created whenever git is initialised.  
+A **.git** folder is created whenever git is initialised.
+
 **Status of changed files**  
 ```shell
 git status
 ```
-Untracked files mean the files has some changes but git has not started tracking them.  
+Untracked files mean the files has some changes but git has not started tracking them.
+
 **Add a file to staging area**  
 ```shell
 git add filename #OR
@@ -73,23 +75,21 @@ git add -A
 Here, each command has their own importance and may behave different in
 different situations.
 
-**Unstage a file**  
-```git
-git rm --cache filename
-```
-
 **See the changes made to a staged file**  
-```git
+```shell
 git diff filename
 ```
 
-Commit is the last part of Git workflow. This permanently saves changes in the staging area to repository. The commit message must be: brief(50 characters or less), in present tense and written under quotation marks.
-```git
-git commit -m "Initial commit"
-```
-Git stores commits in a chronologically order in repository. This is helpful when you need to refer to previous versions of your project. The logs can be viewed by:
-```git
+**View all commits**  
+Git stores history of commits of a branch in chronologically order in repository.
+This is helpful when a reference to previous versions of project is required.
+```shell
 git log
+```
+This has SHA1 key, author, date and message for each commit. Flags can be added
+to have a more concise view of the commits. Try this:
+```shell
+git log --oneline --graph --decorate --color
 ```
 
 ### Backtracking
@@ -109,8 +109,9 @@ git checkout -- filename
 To remove a file from staging area:
 ```git
 git reset filename
+git rm --cache filename
 ```
-Git log return SHA for each commit. The first 7 characters of the sha of last commit can also be used to unstag changes.
+The first 7 characters of the sha of last commit can also be used to unstag changes.
 ```git
 git reset 96g12673
 ```
