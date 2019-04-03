@@ -92,14 +92,43 @@ to have a more concise view of the commits. Try this:
 git log --oneline --graph --decorate --color
 ```
 
+**Move files to different directory inside repository**  
+Here *index.html* is moved from the root directory to a directory named *web* inside root.
+```shell
+git mv index.html web
+```
+
+### Gitignore
+Git provides user an option to exclude files or filename following a pattern from
+being added to staging area. This is done by creating a file named **.gitignore**.
+One pattern per line. Here is a sample *.gitignore* file.
+```text
+__pycache__/*
+.idea/*
+*/__pycache__/*
+```
+
 ### Backtracking
-The commit you are currently on is called __HEAD__ commit. To look for changes in it:
-```git
+As mentioned earlier, **HEAD** is the current commit. To look for changes in it:
+```shell
 git show HEAD
 ```
 The output is same as _git log_ plus changes made to file.
-To revert back to the content before the latest commit:
-```git
+
+**Removing file from staging area**
+```shell
+git rm --cached filename
+```
+Git will stop tracking this file, as well.
+
+**Removing file from current commit**  
+```shell
+git reset HEAD filename
+```
+Git will keep tracking this file but removes it from latest commit.
+
+**Revert back to the content before the latest commit**  
+```shell
 git checkout HEAD filename
 ```
 There is a shortcut to this command:
